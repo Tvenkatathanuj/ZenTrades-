@@ -2,6 +2,10 @@
 
 A zero-cost, end-to-end automation pipeline that converts demo call transcripts into preliminary Retell AI agent configurations (v1), then updates them with onboarding data to produce confirmed, production-ready agent specs (v2) — with full versioning, changelogs, and diff views.
 
+## Demo Video
+
+[Watch the Loom walkthrough](https://www.loom.com/share/e0318a8539b14cb9bd04f7ce25664716)
+
 ---
 
 ## Architecture & Data Flow
