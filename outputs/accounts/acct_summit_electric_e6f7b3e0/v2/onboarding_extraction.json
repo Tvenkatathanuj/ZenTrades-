@@ -1,0 +1,48 @@
+{
+  "account_id": "acct_summit_electric_e6f7b3e0",
+  "company_name": "Summit Electric",
+  "business_type": "electrical",
+  "business_hours": {
+    "days": "Monday through Friday",
+    "start": "6:30 AM",
+    "end": "4:00 PM",
+    "timezone": "Mountain"
+  },
+  "office_address": "7200 East Colfax Avenue, Building C, Denver, Colorado 80220",
+  "services_supported": [
+    "Electrical Services",
+    "Inspection Services",
+    "Installation",
+    "Maintenance",
+    "Repair Services"
+  ],
+  "emergency_definition": [
+    "Active fire situation"
+  ],
+  "emergency_routing_rules": {
+    "who_to_call": [
+      {
+        "name": "front desk"
+      }
+    ],
+    "call_order": [],
+    "fallback": "Notify dispatch team"
+  },
+  "non_emergency_routing_rules": {
+    "during_hours": "Transfer to office/front desk",
+    "after_hours": "Collect caller details and confirm follow-up during business hours"
+  },
+  "call_transfer_rules": {
+    "timeout_seconds": 30,
+    "max_retries": null,
+    "failure_message": "I wasn't able to reach the on-call technician directly. I'll dispatch your request and someone will contact you as soon as possible."
+  },
+  "integration_constraints": [],
+  "after_hours_flow_summary": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (front desk). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+  "office_hours_flow_summary": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (front desk). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+  "questions_or_unknowns": [],
+  "notes": "Phone numbers mentioned: 303-555-0167, 303-555-0134, 303-555-0100",
+  "source_type": "onboarding",
+  "version": "v1",
+  "extraction_method": "rule_based"
+}

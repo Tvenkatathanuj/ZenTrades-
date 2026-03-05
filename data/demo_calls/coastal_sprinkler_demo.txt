@@ -1,0 +1,13 @@
+Hi there, I'm calling about your AI receptionist service. I'm Lisa from Coastal Sprinkler and Fire. We're a fire sprinkler contractor in the Hampton Roads area of Virginia.
+
+We specialize in fire sprinkler system design, installation, inspection, and repair. We also do fire pump testing, standpipe systems, and some limited fire alarm work. Most of our clients are commercial buildings — warehouses, retail, office buildings, a few restaurants.
+
+Our biggest problem is after-hours emergency calls. When a sprinkler head gets hit by a forklift in a warehouse at midnight, that's gallons of water pouring out every minute. The building manager calls us frantic and right now all they get is a voicemail. By the time we hear it and call back, there could be serious water damage.
+
+We need something that can pick up that call immediately, understand the urgency, and get our on-call tech on the line right away. We have two on-call people — a primary and a backup. If the primary doesn't answer within 45 seconds, try the backup.
+
+We also handle non-emergency calls like scheduling inspections and getting quotes, but those can wait until business hours.
+
+I'm curious to see how Clara would work for us. Honestly we've lost customers because of missed after-hours calls and I can't let that keep happening.
+
+We're in the Eastern time zone by the way.

@@ -1,0 +1,32 @@
+Okay let's get Guardian Mechanical set up. I'm Mike, the owner.
+
+Business hours for our office are Monday through Friday, 7:00 AM to 4:30 PM Central Time. We're at 889 Commerce Drive, Elk Grove Village, Illinois 60007.
+
+We need Clara to handle calls 24/7. During business hours, calls should go to our office manager Julie at extension 101 or 847-555-0300. If Julie doesn't pick up, try our dispatcher at 847-555-0301.
+
+After hours, here's how emergencies work for us:
+Emergencies are:
+- No heat when outside temperature is below 40°F
+- No cooling for data centers, medical facilities, or clean rooms
+- Refrigeration failures for any food service or pharmaceutical client
+- Gas leak or gas smell
+- Carbon monoxide alarm
+- Boiler malfunction or failure
+- Any situation where there's potential for property damage or safety risk
+
+If it's an emergency after hours:
+1. Try the on-call tech — the number rotates weekly but right now it's Carlos Rivera at 847-555-0188. Ring for 45 seconds.
+2. If Carlos doesn't answer, try me (Mike) at 847-555-0177.
+3. If neither answers, take the message and mark it high priority. Tell the customer someone will call back within 30 minutes.
+
+Transfer timeout should be 45 seconds. Give each person one shot, don't keep ringing the same number over and over.
+
+If transfer fails, the message should be: "I understand this is urgent. I've documented your emergency and notified our on-call team. Someone from Guardian Mechanical will contact you within 30 minutes. Can I confirm your callback number?"
+
+Non-emergency after hours: collect name, number, brief description, and tell them we'll reach out during business hours.
+
+One thing — we use a proprietary dispatch system that doesn't have an API, so don't try to create tickets or jobs automatically. Clara should just take messages and route calls.
+
+Our service area is the greater Chicagoland area and northwest Indiana.
+
+I think that's it for now.

@@ -1,0 +1,8 @@
+# Core dependencies (all zero-cost, open source)
+openai-whisper>=20231117
+# Note: whisper requires ffmpeg to be installed on the system
+
+# Optional: for enhanced text processing
+regex>=2023.0
+
+# No paid APIs or services required

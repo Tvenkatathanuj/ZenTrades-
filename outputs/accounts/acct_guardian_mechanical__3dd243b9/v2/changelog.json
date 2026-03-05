@@ -1,0 +1,329 @@
+{
+  "summary": "v1 -> v2 update: 19 total changes. Business Info: 3 change(s); Hours And Schedule: 4 change(s); Emergency Config: 4 change(s); Transfer Config: 2 change(s); Other: 6 change(s)",
+  "timestamp": "2026-03-04T10:26:23.785328Z",
+  "account_id": "acct_guardian_mechanical__3dd243b9",
+  "company_name": "Guardian Mechanical",
+  "from_version": "v1",
+  "to_version": "v2",
+  "total_changes": 19,
+  "changes_by_category": {
+    "business_info": [
+      {
+        "field": "business_type",
+        "action": "modified",
+        "old_value": "plumbing",
+        "new_value": "mechanical"
+      },
+      {
+        "field": "company_name",
+        "action": "modified",
+        "old_value": "Guardian Mechanical Services",
+        "new_value": "Guardian Mechanical"
+      },
+      {
+        "field": "office_address",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "889 Commerce Drive, Elk Grove Village, Illinois 60007"
+      }
+    ],
+    "hours_and_schedule": [
+      {
+        "field": "business_hours.days",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Monday through Friday"
+      },
+      {
+        "field": "business_hours.end",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "4:30 PM"
+      },
+      {
+        "field": "business_hours.start",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "7:00 AM"
+      },
+      {
+        "field": "business_hours.timezone",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Central"
+      }
+    ],
+    "services": [],
+    "emergency_config": [
+      {
+        "field": "emergency_definition",
+        "action": "modified",
+        "old_value": [
+          "Gas leak",
+          "No A/C (summer emergency)",
+          "No heat (winter emergency)",
+          "no heat",
+          "things like no heat in winter — that's a big one for commercial buildings, it can freeze pipes"
+        ],
+        "new_value": [
+          "Gas leak",
+          "No A/C (summer emergency)",
+          "No cooling",
+          "No heat",
+          "No heat (winter emergency)",
+          "gas smell",
+          "no heat",
+          "things like no heat in winter — that's a big one for commercial buildings, it can freeze pipes"
+        ]
+      },
+      {
+        "field": "emergency_routing_rules.fallback",
+        "action": "modified",
+        "old_value": "Leave voicemail and assure callback",
+        "new_value": "Notify dispatch team"
+      },
+      {
+        "field": "emergency_routing_rules.who_to_call",
+        "action": "modified",
+        "old_value": [
+          {
+            "name": "On-call technician"
+          }
+        ],
+        "new_value": [
+          {
+            "name": "On-call technician"
+          },
+          {
+            "name": "owner"
+          },
+          {
+            "name": "office manager"
+          },
+          {
+            "name": "dispatcher"
+          }
+        ]
+      },
+      {
+        "field": "non_emergency_routing_rules.during_hours",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Transfer to office/front desk"
+      }
+    ],
+    "routing_rules": [],
+    "transfer_config": [
+      {
+        "field": "call_transfer_rules.failure_message",
+        "action": "modified",
+        "old_value": "I wasn't able to connect you directly. Let me take your information and someone will call you back shortly.",
+        "new_value": "I wasn't able to reach the on-call technician directly. I'll dispatch your request and someone will contact you as soon as possible."
+      },
+      {
+        "field": "call_transfer_rules.timeout_seconds",
+        "action": "modified",
+        "old_value": null,
+        "new_value": 45
+      }
+    ],
+    "integration": [],
+    "other": [
+      {
+        "field": "after_hours_flow_summary",
+        "action": "modified",
+        "old_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+        "new_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, owner, office manager, dispatcher). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call."
+      },
+      {
+        "field": "notes",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Phone numbers mentioned: 847-555-0301, 847-555-0177, 847-555-0188, 847-555-0300"
+      },
+      {
+        "field": "office_hours_flow_summary",
+        "action": "modified",
+        "old_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+        "new_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, owner, office manager, dispatcher). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally."
+      },
+      {
+        "field": "questions_or_unknowns",
+        "action": "modified",
+        "old_value": [
+          "Timezone not specified",
+          "Office address not provided"
+        ],
+        "new_value": []
+      },
+      {
+        "field": "source_type",
+        "action": "modified",
+        "old_value": "demo",
+        "new_value": "onboarding"
+      },
+      {
+        "field": "version",
+        "action": "modified",
+        "old_value": "v1",
+        "new_value": "v2"
+      }
+    ]
+  },
+  "resolved_unknowns": [
+    "Office address not provided",
+    "Timezone not specified"
+  ],
+  "new_unknowns": [],
+  "all_changes": [
+    {
+      "field": "after_hours_flow_summary",
+      "action": "modified",
+      "old_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+      "new_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, owner, office manager, dispatcher). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call."
+    },
+    {
+      "field": "business_hours.days",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Monday through Friday"
+    },
+    {
+      "field": "business_hours.end",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "4:30 PM"
+    },
+    {
+      "field": "business_hours.start",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "7:00 AM"
+    },
+    {
+      "field": "business_hours.timezone",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Central"
+    },
+    {
+      "field": "business_type",
+      "action": "modified",
+      "old_value": "plumbing",
+      "new_value": "mechanical"
+    },
+    {
+      "field": "call_transfer_rules.failure_message",
+      "action": "modified",
+      "old_value": "I wasn't able to connect you directly. Let me take your information and someone will call you back shortly.",
+      "new_value": "I wasn't able to reach the on-call technician directly. I'll dispatch your request and someone will contact you as soon as possible."
+    },
+    {
+      "field": "call_transfer_rules.timeout_seconds",
+      "action": "modified",
+      "old_value": null,
+      "new_value": 45
+    },
+    {
+      "field": "company_name",
+      "action": "modified",
+      "old_value": "Guardian Mechanical Services",
+      "new_value": "Guardian Mechanical"
+    },
+    {
+      "field": "emergency_definition",
+      "action": "modified",
+      "old_value": [
+        "Gas leak",
+        "No A/C (summer emergency)",
+        "No heat (winter emergency)",
+        "no heat",
+        "things like no heat in winter — that's a big one for commercial buildings, it can freeze pipes"
+      ],
+      "new_value": [
+        "Gas leak",
+        "No A/C (summer emergency)",
+        "No cooling",
+        "No heat",
+        "No heat (winter emergency)",
+        "gas smell",
+        "no heat",
+        "things like no heat in winter — that's a big one for commercial buildings, it can freeze pipes"
+      ]
+    },
+    {
+      "field": "emergency_routing_rules.fallback",
+      "action": "modified",
+      "old_value": "Leave voicemail and assure callback",
+      "new_value": "Notify dispatch team"
+    },
+    {
+      "field": "emergency_routing_rules.who_to_call",
+      "action": "modified",
+      "old_value": [
+        {
+          "name": "On-call technician"
+        }
+      ],
+      "new_value": [
+        {
+          "name": "On-call technician"
+        },
+        {
+          "name": "owner"
+        },
+        {
+          "name": "office manager"
+        },
+        {
+          "name": "dispatcher"
+        }
+      ]
+    },
+    {
+      "field": "non_emergency_routing_rules.during_hours",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Transfer to office/front desk"
+    },
+    {
+      "field": "notes",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Phone numbers mentioned: 847-555-0301, 847-555-0177, 847-555-0188, 847-555-0300"
+    },
+    {
+      "field": "office_address",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "889 Commerce Drive, Elk Grove Village, Illinois 60007"
+    },
+    {
+      "field": "office_hours_flow_summary",
+      "action": "modified",
+      "old_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+      "new_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, owner, office manager, dispatcher). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally."
+    },
+    {
+      "field": "questions_or_unknowns",
+      "action": "modified",
+      "old_value": [
+        "Timezone not specified",
+        "Office address not provided"
+      ],
+      "new_value": []
+    },
+    {
+      "field": "source_type",
+      "action": "modified",
+      "old_value": "demo",
+      "new_value": "onboarding"
+    },
+    {
+      "field": "version",
+      "action": "modified",
+      "old_value": "v1",
+      "new_value": "v2"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "account_id": "acct_coastal_sprinkler_an_ef18be42",
+  "company_name": "Coastal Sprinkler and Fire",
+  "business_type": "sprinkler",
+  "business_hours": {
+    "days": "Monday through Friday",
+    "start": "8:00 AM",
+    "end": "4:30 PM",
+    "timezone": "Eastern"
+  },
+  "office_address": "3100 Shore Drive, Suite 12, Virginia Beach, Virginia 23451",
+  "services_supported": [
+    "24/7 Emergency Response",
+    "Backflow Prevention",
+    "Fire Alarm Systems",
+    "Fire Protection",
+    "Fire Pump Services",
+    "Fire Sprinkler Systems",
+    "Inspection Services",
+    "Installation",
+    "Maintenance",
+    "Repair Services",
+    "Sprinkler Systems",
+    "Standpipe Systems",
+    "Testing & Certification"
+  ],
+  "emergency_definition": [
+    "Active fire situation",
+    "Flooding",
+    "flooding",
+    "water flowing"
+  ],
+  "emergency_routing_rules": {
+    "who_to_call": [
+      {
+        "name": "owner"
+      },
+      {
+        "name": "office manager"
+      }
+    ],
+    "call_order": [],
+    "fallback": "Notify dispatch team"
+  },
+  "non_emergency_routing_rules": {
+    "during_hours": "Transfer to office/front desk",
+    "after_hours": ""
+  },
+  "call_transfer_rules": {
+    "timeout_seconds": 45,
+    "max_retries": null,
+    "failure_message": "I wasn't able to reach the on-call technician directly. I'll dispatch your request and someone will contact you as soon as possible."
+  },
+  "integration_constraints": [
+    "Never create certain job types in ServiceTrade (confirm specific types)",
+    "Never create sprinkler jobs in ServiceTrade"
+  ],
+  "after_hours_flow_summary": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (owner, office manager). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+  "office_hours_flow_summary": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (owner, office manager). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+  "questions_or_unknowns": [],
+  "notes": "Phone numbers mentioned: 757-555-0148, 757-555-0163, 757-555-0100, 757-555-0192",
+  "source_type": "onboarding",
+  "version": "v1",
+  "extraction_method": "rule_based"
+}

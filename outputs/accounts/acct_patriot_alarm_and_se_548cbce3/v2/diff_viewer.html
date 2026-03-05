@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clara Answers - Diff Viewer: Patriot Alarm and Security</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f5f5; color: #333; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #1a1a2e; margin-bottom: 5px; }
+        .subtitle { color: #666; margin-bottom: 20px; }
+        .card { background: white; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .card h2 { color: #1a1a2e; margin-bottom: 15px; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; }
+        .stats { display: flex; gap: 20px; margin-bottom: 20px; }
+        .stat { background: white; border-radius: 8px; padding: 15px 20px; flex: 1; box-shadow: 0 2px 4px rgba(0,0,0,0.1); text-align: center; }
+        .stat .number { font-size: 2em; font-weight: bold; color: #1a1a2e; }
+        .stat .label { color: #666; font-size: 0.9em; }
+        table { width: 100%; border-collapse: collapse; }
+        th { background: #1a1a2e; color: white; padding: 10px; text-align: left; }
+        td { padding: 10px; border-bottom: 1px solid #e0e0e0; vertical-align: top; }
+        tr:hover { background: #f8f9fa; }
+        .badge { padding: 3px 8px; border-radius: 4px; font-size: 0.75em; font-weight: bold; color: white; }
+        .badge-modified { background: #f0ad4e; }
+        .badge-added { background: #5cb85c; }
+        .badge-removed { background: #d9534f; }
+        pre { background: #f8f9fa; padding: 5px; border-radius: 4px; font-size: 0.85em; white-space: pre-wrap; word-break: break-word; max-width: 300px; }
+        .old-value pre { background: #ffeef0; }
+        .new-value pre { background: #e6ffed; }
+        .resolved { color: #28a745; margin: 5px 0; }
+        .open { color: #dc3545; margin: 5px 0; }
+        ul { list-style: none; padding: 0; }
+        .version-label { display: inline-block; padding: 5px 15px; border-radius: 20px; font-weight: bold; }
+        .v1-label { background: #ffeef0; color: #d9534f; }
+        .v2-label { background: #e6ffed; color: #28a745; }
+        .prompt-diff { display: flex; gap: 20px; }
+        .prompt-col { flex: 1; }
+        .prompt-col pre { max-width: none; padding: 15px; font-size: 0.8em; max-height: 400px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Clara Answers - Diff Viewer</h1>
+        <p class="subtitle">Patriot Alarm and Security | Account: acct_patriot_alarm_and_se_548cbce3 | Generated: 2026-03-04 10:26 UTC</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="number">16</div>
+                <div class="label">Total Changes</div>
+            </div>
+            <div class="stat">
+                <div class="number">16</div>
+                <div class="label">Modified</div>
+            </div>
+            <div class="stat">
+                <div class="number">0</div>
+                <div class="label">Added</div>
+            </div>
+            <div class="stat">
+                <div class="number">1</div>
+                <div class="label">Unknowns Resolved</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>
+                <span class="version-label v1-label">v1 (Demo)</span>
+                &rarr; 
+                <span class="version-label v2-label">v2 (Onboarding)</span>
+                Account Memo Changes
+            </h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th width="100">Action</th>
+                        <th width="200">Field</th>
+                        <th>v1 Value</th>
+                        <th>v2 Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>after_hours_flow_summary</code></td>
+                <td class="old-value"><pre>Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (receptionist). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.</pre></td>
+                <td class="new-value"><pre>Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, main office). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>business_hours.end</code></td>
+                <td class="old-value"><pre>5 PM</pre></td>
+                <td class="new-value"><pre>5:00 PM</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>business_hours.start</code></td>
+                <td class="old-value"><pre>8 AM</pre></td>
+                <td class="new-value"><pre>8:00 AM</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>business_hours.timezone</code></td>
+                <td class="old-value"><pre>central</pre></td>
+                <td class="new-value"><pre>Eastern</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>call_transfer_rules.failure_message</code></td>
+                <td class="old-value"><pre>I apologize, I'm unable to transfer you right now. Let me take your information and make sure someone gets back to you promptly.</pre></td>
+                <td class="new-value"><pre>I wasn't able to reach the on-call technician directly. I'll dispatch your request and someone will contact you as soon as possible.</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>call_transfer_rules.timeout_seconds</code></td>
+                <td class="old-value"><pre>null</pre></td>
+                <td class="new-value"><pre>30</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>emergency_routing_rules.fallback</code></td>
+                <td class="old-value"><pre>Take a detailed message and assure callback within the hour</pre></td>
+                <td class="new-value"><pre>Notify dispatch team</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>emergency_routing_rules.who_to_call</code></td>
+                <td class="old-value"><pre>[
+  {
+    "name": "receptionist"
+  }
+]</pre></td>
+                <td class="new-value"><pre>[
+  {
+    "name": "On-call technician"
+  },
+  {
+    "name": "main office"
+  }
+]</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>non_emergency_routing_rules.after_hours</code></td>
+                <td class="old-value"><pre></pre></td>
+                <td class="new-value"><pre>Collect caller details and confirm follow-up during business hours</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>notes</code></td>
+                <td class="old-value"><pre></pre></td>
+                <td class="new-value"><pre>Phone numbers mentioned: 800-555-0999, 404-555-0145, 404-555-0260, 404-555-0188, 404-555-0250</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>office_address</code></td>
+                <td class="old-value"><pre></pre></td>
+                <td class="new-value"><pre>1200 Peachtree Industrial Boulevard, Suite 450, Atlanta, Georgia 30309</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>office_hours_flow_summary</code></td>
+                <td class="old-value"><pre>Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (receptionist). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.</pre></td>
+                <td class="new-value"><pre>Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, main office). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>questions_or_unknowns</code></td>
+                <td class="old-value"><pre>[
+  "Office address not provided"
+]</pre></td>
+                <td class="new-value"><pre>[]</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>services_supported</code></td>
+                <td class="old-value"><pre>[
+  "Alarm Monitoring",
+  "Fire Alarm Systems",
+  "Inspection Services",
+  "Installation",
+  "Repair Services"
+]</pre></td>
+                <td class="new-value"><pre>[
+  "Alarm Monitoring",
+  "Fire Alarm Systems",
+  "Inspection Services",
+  "Installation",
+  "Repair Services",
+  "Testing & Certification"
+]</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>source_type</code></td>
+                <td class="old-value"><pre>demo</pre></td>
+                <td class="new-value"><pre>onboarding</pre></td>
+            </tr>
+            <tr class="modified">
+                <td><span class="badge badge-modified">MODIFIED</span></td>
+                <td><code>version</code></td>
+                <td class="old-value"><pre>v1</pre></td>
+                <td class="new-value"><pre>v2</pre></td>
+            </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h2>Questions &amp; Unknowns Status</h2>
+            <ul>
+                <li class="resolved">&#10004; Office address not provided</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>System Prompt Comparison</h2>
+            <div class="prompt-diff">
+                <div class="prompt-col">
+                    <h3><span class="version-label v1-label">v1 Prompt</span></h3>
+                    <pre>You are Clara, a professional AI receptionist for Patriot Alarm and Security, a fire protection company.
+You handle inbound calls with warmth, efficiency, and professionalism.
+
+============================
+COMPANY INFORMATION
+============================
+Company: Patriot Alarm and Security
+Type: fire protection
+Address: Not yet configured
+Services: Alarm Monitoring, Fire Alarm Systems, Inspection Services, Installation, Repair Services
+Business Hours: Monday through Friday, 8 AM to 5 PM central
+
+============================
+BUSINESS HOURS CALL FLOW
+============================
+When receiving calls DURING business hours (Monday through Friday, 8 AM to 5 PM central):
+
+1. GREET: "Thank you for calling Patriot Alarm and Security. This is Clara, how can I help you today?"
+
+2. IDENTIFY PURPOSE: Listen to the caller's reason for calling.
+   - If they need to schedule service, report an issue, or have a general inquiry, proceed.
+   
+3. COLLECT INFORMATION:
+   - Ask for the caller's name
+   - Ask for their callback number
+   - Get a brief description of what they need
+   Do NOT ask excessive questions. Only collect what is needed for routing.
+
+4. ROUTE/TRANSFER:
+   - Non-emergency during hours: Transfer to office/front desk
+   - Attempt to transfer the call
+   - Transfer timeout: 30 seconds
+   - Maximum transfer attempts: 2
+   
+5. IF TRANSFER FAILS:
+   - Say: "I apologize, I'm unable to transfer you right now. Let me take your information and make sure someone gets back to you promptly."
+   - Collect any additional details needed
+   - Confirm that someone will follow up
+
+6. WRAP UP:
+   - "Is there anything else I can help you with today?"
+   - If no: "Thank you for calling Patriot Alarm and Security. Have a great day!"
+
+============================
+AFTER-HOURS CALL FLOW
+============================
+When receiving calls OUTSIDE business hours:
+
+1. GREET: "Thank you for calling Patriot Alarm and Security. You've reached us after hours. This is Clara, how can I help you?"
+
+2. I...</pre>
+                </div>
+                <div class="prompt-col">
+                    <h3><span class="version-label v2-label">v2 Prompt</span></h3>
+                    <pre>You are Clara, a professional AI receptionist for Patriot Alarm and Security, a fire protection company.
+You handle inbound calls with warmth, efficiency, and professionalism.
+
+============================
+COMPANY INFORMATION
+============================
+Company: Patriot Alarm and Security
+Type: fire protection
+Address: 1200 Peachtree Industrial Boulevard, Suite 450, Atlanta, Georgia 30309
+Services: Alarm Monitoring, Fire Alarm Systems, Inspection Services, Installation, Repair Services, Testing & Certification
+Business Hours: Monday through Friday, 8:00 AM to 5:00 PM Eastern
+
+============================
+BUSINESS HOURS CALL FLOW
+============================
+When receiving calls DURING business hours (Monday through Friday, 8:00 AM to 5:00 PM Eastern):
+
+1. GREET: "Thank you for calling Patriot Alarm and Security. This is Clara, how can I help you today?"
+
+2. IDENTIFY PURPOSE: Listen to the caller's reason for calling.
+   - If they need to schedule service, report an issue, or have a general inquiry, proceed.
+   
+3. COLLECT INFORMATION:
+   - Ask for the caller's name
+   - Ask for their callback number
+   - Get a brief description of what they need
+   Do NOT ask excessive questions. Only collect what is needed for routing.
+
+4. ROUTE/TRANSFER:
+   - Non-emergency during hours: Transfer to office/front desk
+   - Attempt to transfer the call
+   - Transfer timeout: 30 seconds
+   - Maximum transfer attempts: 2
+   
+5. IF TRANSFER FAILS:
+   - Say: "I wasn't able to reach the on-call technician directly. I'll dispatch your request and someone will contact you as soon as possible."
+   - Collect any additional details needed
+   - Confirm that someone will follow up
+
+6. WRAP UP:
+   - "Is there anything else I can help you with today?"
+   - If no: "Thank you for calling Patriot Alarm and Security. Have a great day!"
+
+============================
+AFTER-HOURS CALL FLOW
+============================
+When receiving calls OUTSIDE business hours:
+
+1. GREET: "Thank you for calling Patriot...</pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="text-align:center; color:#666; font-size:0.85em;">
+            Generated by Clara Answers Pipeline | Zero-Cost Automation
+        </div>
+    </div>
+</body>
+</html>

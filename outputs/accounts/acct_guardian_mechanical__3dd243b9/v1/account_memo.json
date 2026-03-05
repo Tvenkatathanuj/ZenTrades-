@@ -1,0 +1,52 @@
+{
+  "account_id": "acct_guardian_mechanical__3dd243b9",
+  "company_name": "Guardian Mechanical Services",
+  "business_type": "plumbing",
+  "business_hours": {
+    "days": "",
+    "start": "",
+    "end": "",
+    "timezone": ""
+  },
+  "office_address": "",
+  "services_supported": [
+    "24/7 Emergency Response",
+    "HVAC Services"
+  ],
+  "emergency_definition": [
+    "Gas leak",
+    "No A/C (summer emergency)",
+    "No heat (winter emergency)",
+    "no heat",
+    "things like no heat in winter — that's a big one for commercial buildings, it can freeze pipes"
+  ],
+  "emergency_routing_rules": {
+    "who_to_call": [
+      {
+        "name": "On-call technician"
+      }
+    ],
+    "call_order": [],
+    "fallback": "Leave voicemail and assure callback"
+  },
+  "non_emergency_routing_rules": {
+    "during_hours": "",
+    "after_hours": "Collect caller details and confirm follow-up during business hours"
+  },
+  "call_transfer_rules": {
+    "timeout_seconds": null,
+    "max_retries": null,
+    "failure_message": "I wasn't able to connect you directly. Let me take your information and someone will call you back shortly."
+  },
+  "integration_constraints": [],
+  "after_hours_flow_summary": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+  "office_hours_flow_summary": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+  "questions_or_unknowns": [
+    "Timezone not specified",
+    "Office address not provided"
+  ],
+  "notes": "",
+  "source_type": "demo",
+  "version": "v1",
+  "extraction_method": "rule_based"
+}

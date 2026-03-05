@@ -1,0 +1,344 @@
+{
+  "summary": "v1 -> v2 update: 17 total changes. Business Info: 1 change(s); Hours And Schedule: 3 change(s); Services: 1 change(s); Emergency Config: 3 change(s); Transfer Config: 2 change(s); Integration: 1 change(s); Other: 6 change(s)",
+  "timestamp": "2026-03-04T10:26:23.708525Z",
+  "account_id": "acct_coastal_sprinkler_an_ef18be42",
+  "company_name": "Coastal Sprinkler and Fire",
+  "from_version": "v1",
+  "to_version": "v2",
+  "total_changes": 17,
+  "changes_by_category": {
+    "business_info": [
+      {
+        "field": "office_address",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "3100 Shore Drive, Suite 12, Virginia Beach, Virginia 23451"
+      }
+    ],
+    "hours_and_schedule": [
+      {
+        "field": "business_hours.days",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Monday through Friday"
+      },
+      {
+        "field": "business_hours.end",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "4:30 PM"
+      },
+      {
+        "field": "business_hours.start",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "8:00 AM"
+      }
+    ],
+    "services": [
+      {
+        "field": "services_supported",
+        "action": "modified",
+        "old_value": [
+          "Fire Alarm Systems",
+          "Fire Pump Services",
+          "Fire Sprinkler Systems",
+          "Inspection Services",
+          "Installation",
+          "Repair Services",
+          "Sprinkler Systems",
+          "Standpipe Systems",
+          "Testing & Certification"
+        ],
+        "new_value": [
+          "24/7 Emergency Response",
+          "Backflow Prevention",
+          "Fire Alarm Systems",
+          "Fire Protection",
+          "Fire Pump Services",
+          "Fire Sprinkler Systems",
+          "Inspection Services",
+          "Installation",
+          "Maintenance",
+          "Repair Services",
+          "Sprinkler Systems",
+          "Standpipe Systems",
+          "Testing & Certification"
+        ]
+      }
+    ],
+    "emergency_config": [
+      {
+        "field": "emergency_definition",
+        "action": "modified",
+        "old_value": [
+          "Active fire situation",
+          "Water damage",
+          "water damage"
+        ],
+        "new_value": [
+          "Active fire situation",
+          "Flooding",
+          "Water damage",
+          "flooding",
+          "water damage",
+          "water flowing"
+        ]
+      },
+      {
+        "field": "emergency_routing_rules.fallback",
+        "action": "modified",
+        "old_value": "Leave voicemail and assure callback",
+        "new_value": "Notify dispatch team"
+      },
+      {
+        "field": "emergency_routing_rules.who_to_call",
+        "action": "modified",
+        "old_value": [
+          {
+            "name": "On-call technician"
+          },
+          {
+            "name": "receptionist"
+          }
+        ],
+        "new_value": [
+          {
+            "name": "owner"
+          },
+          {
+            "name": "office manager"
+          }
+        ]
+      }
+    ],
+    "routing_rules": [],
+    "transfer_config": [
+      {
+        "field": "call_transfer_rules.failure_message",
+        "action": "modified",
+        "old_value": "I wasn't able to connect you directly. Let me take your information and someone will call you back shortly.",
+        "new_value": "I wasn't able to reach the on-call technician directly. I'll dispatch your request and someone will contact you as soon as possible."
+      },
+      {
+        "field": "call_transfer_rules.timeout_seconds",
+        "action": "modified",
+        "old_value": null,
+        "new_value": 45
+      }
+    ],
+    "integration": [
+      {
+        "field": "integration_constraints",
+        "action": "modified",
+        "old_value": [],
+        "new_value": [
+          "Never create certain job types in ServiceTrade (confirm specific types)",
+          "Never create sprinkler jobs in ServiceTrade"
+        ]
+      }
+    ],
+    "other": [
+      {
+        "field": "after_hours_flow_summary",
+        "action": "modified",
+        "old_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, receptionist). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+        "new_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (owner, office manager). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call."
+      },
+      {
+        "field": "notes",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Phone numbers mentioned: 757-555-0148, 757-555-0163, 757-555-0100, 757-555-0192"
+      },
+      {
+        "field": "office_hours_flow_summary",
+        "action": "modified",
+        "old_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, receptionist). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+        "new_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (owner, office manager). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally."
+      },
+      {
+        "field": "questions_or_unknowns",
+        "action": "modified",
+        "old_value": [
+          "Office address not provided"
+        ],
+        "new_value": []
+      },
+      {
+        "field": "source_type",
+        "action": "modified",
+        "old_value": "demo",
+        "new_value": "onboarding"
+      },
+      {
+        "field": "version",
+        "action": "modified",
+        "old_value": "v1",
+        "new_value": "v2"
+      }
+    ]
+  },
+  "resolved_unknowns": [
+    "Office address not provided"
+  ],
+  "new_unknowns": [],
+  "all_changes": [
+    {
+      "field": "after_hours_flow_summary",
+      "action": "modified",
+      "old_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, receptionist). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+      "new_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (owner, office manager). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call."
+    },
+    {
+      "field": "business_hours.days",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Monday through Friday"
+    },
+    {
+      "field": "business_hours.end",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "4:30 PM"
+    },
+    {
+      "field": "business_hours.start",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "8:00 AM"
+    },
+    {
+      "field": "call_transfer_rules.failure_message",
+      "action": "modified",
+      "old_value": "I wasn't able to connect you directly. Let me take your information and someone will call you back shortly.",
+      "new_value": "I wasn't able to reach the on-call technician directly. I'll dispatch your request and someone will contact you as soon as possible."
+    },
+    {
+      "field": "call_transfer_rules.timeout_seconds",
+      "action": "modified",
+      "old_value": null,
+      "new_value": 45
+    },
+    {
+      "field": "emergency_definition",
+      "action": "modified",
+      "old_value": [
+        "Active fire situation",
+        "Water damage",
+        "water damage"
+      ],
+      "new_value": [
+        "Active fire situation",
+        "Flooding",
+        "Water damage",
+        "flooding",
+        "water damage",
+        "water flowing"
+      ]
+    },
+    {
+      "field": "emergency_routing_rules.fallback",
+      "action": "modified",
+      "old_value": "Leave voicemail and assure callback",
+      "new_value": "Notify dispatch team"
+    },
+    {
+      "field": "emergency_routing_rules.who_to_call",
+      "action": "modified",
+      "old_value": [
+        {
+          "name": "On-call technician"
+        },
+        {
+          "name": "receptionist"
+        }
+      ],
+      "new_value": [
+        {
+          "name": "owner"
+        },
+        {
+          "name": "office manager"
+        }
+      ]
+    },
+    {
+      "field": "integration_constraints",
+      "action": "modified",
+      "old_value": [],
+      "new_value": [
+        "Never create certain job types in ServiceTrade (confirm specific types)",
+        "Never create sprinkler jobs in ServiceTrade"
+      ]
+    },
+    {
+      "field": "notes",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Phone numbers mentioned: 757-555-0148, 757-555-0163, 757-555-0100, 757-555-0192"
+    },
+    {
+      "field": "office_address",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "3100 Shore Drive, Suite 12, Virginia Beach, Virginia 23451"
+    },
+    {
+      "field": "office_hours_flow_summary",
+      "action": "modified",
+      "old_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, receptionist). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+      "new_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (owner, office manager). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally."
+    },
+    {
+      "field": "questions_or_unknowns",
+      "action": "modified",
+      "old_value": [
+        "Office address not provided"
+      ],
+      "new_value": []
+    },
+    {
+      "field": "services_supported",
+      "action": "modified",
+      "old_value": [
+        "Fire Alarm Systems",
+        "Fire Pump Services",
+        "Fire Sprinkler Systems",
+        "Inspection Services",
+        "Installation",
+        "Repair Services",
+        "Sprinkler Systems",
+        "Standpipe Systems",
+        "Testing & Certification"
+      ],
+      "new_value": [
+        "24/7 Emergency Response",
+        "Backflow Prevention",
+        "Fire Alarm Systems",
+        "Fire Protection",
+        "Fire Pump Services",
+        "Fire Sprinkler Systems",
+        "Inspection Services",
+        "Installation",
+        "Maintenance",
+        "Repair Services",
+        "Sprinkler Systems",
+        "Standpipe Systems",
+        "Testing & Certification"
+      ]
+    },
+    {
+      "field": "source_type",
+      "action": "modified",
+      "old_value": "demo",
+      "new_value": "onboarding"
+    },
+    {
+      "field": "version",
+      "action": "modified",
+      "old_value": "v1",
+      "new_value": "v2"
+    }
+  ]
+}

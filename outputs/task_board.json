@@ -1,0 +1,348 @@
+{
+  "board_name": "Clara Answers - Agent Onboarding",
+  "created_at": "2026-03-04T04:30:09.473549Z",
+  "columns": {
+    "backlog": [],
+    "in_progress": [],
+    "review": [
+      "setup_acct_apex_fire_protection_10ea9a3c",
+      "setup_acct_coastal_sprinkler_an_ef18be42",
+      "setup_acct_guardian_mechanical__3dd243b9",
+      "setup_acct_patriot_alarm_and_se_548cbce3",
+      "setup_acct_summit_electric_e6f7b3e0"
+    ],
+    "done": []
+  },
+  "tasks": {
+    "setup_acct_apex_fire_protection_10ea9a3c": {
+      "task_id": "setup_acct_apex_fire_protection_10ea9a3c",
+      "title": "[v2] Agent Updated - Apex Fire Protection",
+      "description": "Onboarding call processed. Agent updated to v2.\nServices: 11\nRemaining questions: 0\nStatus: Ready for review",
+      "status": "review",
+      "metadata": {
+        "account_id": "acct_apex_fire_protection_10ea9a3c",
+        "company_name": "Apex Fire Protection",
+        "version": "v2",
+        "unknowns_count": 0,
+        "services_count": 11,
+        "business_hours_configured": true,
+        "emergency_rules_configured": true
+      },
+      "created_at": "2026-03-04T04:30:09.473549Z",
+      "updated_at": "2026-03-04T10:26:23.672982Z",
+      "history": [
+        {
+          "action": "created",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T04:30:09.473549Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T04:30:09.612097Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T04:33:11.309151Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T04:33:11.458198Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T10:24:59.433943Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T10:24:59.734555Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T10:26:23.360729Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T10:26:23.672982Z"
+        }
+      ]
+    },
+    "setup_acct_coastal_sprinkler_an_ef18be42": {
+      "task_id": "setup_acct_coastal_sprinkler_an_ef18be42",
+      "title": "[v2] Agent Updated - Coastal Sprinkler and Fire",
+      "description": "Onboarding call processed. Agent updated to v2.\nServices: 13\nRemaining questions: 0\nStatus: Ready for review",
+      "status": "review",
+      "metadata": {
+        "account_id": "acct_coastal_sprinkler_an_ef18be42",
+        "company_name": "Coastal Sprinkler and Fire",
+        "version": "v2",
+        "unknowns_count": 0,
+        "services_count": 13,
+        "business_hours_configured": true,
+        "emergency_rules_configured": true
+      },
+      "created_at": "2026-03-04T04:30:09.488548Z",
+      "updated_at": "2026-03-04T10:26:23.753521Z",
+      "history": [
+        {
+          "action": "created",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T04:30:09.488548Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T04:30:09.668311Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T04:33:11.328146Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T04:33:11.500727Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T10:24:59.481438Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T10:24:59.829124Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T10:26:23.396756Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T10:26:23.753521Z"
+        }
+      ]
+    },
+    "setup_acct_guardian_mechanical__3dd243b9": {
+      "task_id": "setup_acct_guardian_mechanical__3dd243b9",
+      "title": "[v2] Agent Updated - Guardian Mechanical",
+      "description": "Onboarding call processed. Agent updated to v2.\nServices: 2\nRemaining questions: 0\nStatus: Ready for review",
+      "status": "review",
+      "metadata": {
+        "account_id": "acct_guardian_mechanical__3dd243b9",
+        "company_name": "Guardian Mechanical",
+        "version": "v2",
+        "unknowns_count": 0,
+        "services_count": 2,
+        "business_hours_configured": true,
+        "emergency_rules_configured": true
+      },
+      "created_at": "2026-03-04T04:30:09.503570Z",
+      "updated_at": "2026-03-04T10:26:23.829862Z",
+      "history": [
+        {
+          "action": "created",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T04:30:09.503570Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T04:30:09.711302Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T04:33:11.346151Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T04:33:11.547735Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T10:24:59.536453Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T10:24:59.950332Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T10:26:23.437293Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T10:26:23.829862Z"
+        }
+      ]
+    },
+    "setup_acct_patriot_alarm_and_se_548cbce3": {
+      "task_id": "setup_acct_patriot_alarm_and_se_548cbce3",
+      "title": "[v2] Agent Updated - Patriot Alarm and Security",
+      "description": "Onboarding call processed. Agent updated to v2.\nServices: 6\nRemaining questions: 0\nStatus: Ready for review",
+      "status": "review",
+      "metadata": {
+        "account_id": "acct_patriot_alarm_and_se_548cbce3",
+        "company_name": "Patriot Alarm and Security",
+        "version": "v2",
+        "unknowns_count": 0,
+        "services_count": 6,
+        "business_hours_configured": true,
+        "emergency_rules_configured": true
+      },
+      "created_at": "2026-03-04T04:30:09.519589Z",
+      "updated_at": "2026-03-04T10:26:23.906927Z",
+      "history": [
+        {
+          "action": "created",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T04:30:09.519589Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T04:30:09.755361Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T04:33:11.361153Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T04:33:11.591268Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T10:24:59.577017Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T10:25:00.060494Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T10:26:23.471281Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T10:26:23.906927Z"
+        }
+      ]
+    },
+    "setup_acct_summit_electric_e6f7b3e0": {
+      "task_id": "setup_acct_summit_electric_e6f7b3e0",
+      "title": "[v2] Agent Updated - Summit Electric",
+      "description": "Onboarding call processed. Agent updated to v2.\nServices: 6\nRemaining questions: 0\nStatus: Ready for review",
+      "status": "review",
+      "metadata": {
+        "account_id": "acct_summit_electric_e6f7b3e0",
+        "company_name": "Summit Electric",
+        "version": "v2",
+        "unknowns_count": 0,
+        "services_count": 6,
+        "business_hours_configured": true,
+        "emergency_rules_configured": true
+      },
+      "created_at": "2026-03-04T04:30:09.536102Z",
+      "updated_at": "2026-03-04T10:26:23.980926Z",
+      "history": [
+        {
+          "action": "created",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T04:30:09.536102Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T04:30:09.797362Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T04:33:11.381153Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T04:33:11.632290Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T10:24:59.615988Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T10:25:00.155558Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "review",
+          "to_status": "in_progress",
+          "timestamp": "2026-03-04T10:26:23.507854Z"
+        },
+        {
+          "action": "updated",
+          "from_status": "in_progress",
+          "to_status": "review",
+          "timestamp": "2026-03-04T10:26:23.980926Z"
+        }
+      ]
+    }
+  }
+}

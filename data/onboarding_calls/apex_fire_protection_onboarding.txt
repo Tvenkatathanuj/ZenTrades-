@@ -1,0 +1,32 @@
+Alright, so we're doing the onboarding setup for Apex Fire Protection. Let me walk you through everything.
+
+Our official business hours are Monday through Friday, 7:30 AM to 5:00 PM Central Time. We're closed on Saturdays and Sundays.
+
+Our office address is 4521 Industrial Boulevard, Suite 200, Arlington, Texas 76017.
+
+For emergency definitions, here's how we want it set up:
+- Any sprinkler system leak or discharge — that's always an emergency no matter what time
+- Fire alarm system going off or malfunctioning — emergency
+- Water flooding from any fire protection system — emergency
+- Fire suppression system discharge in a kitchen or server room — emergency
+- Everything else can wait until business hours
+
+For emergency routing after hours, here's the phone tree:
+1. First, try calling our on-call technician. Right now that's Dave Martinez at 817-555-0142. Ring for 30 seconds.
+2. If Dave doesn't answer, try our backup tech Tom Wilson at 817-555-0198. Ring for 30 seconds.
+3. If neither answers, call me — Sarah Johnson — at 817-555-0156. I'm the operations manager.
+4. If nobody picks up, take the caller's information and tell them we will have someone call back within 15 minutes. Then send a text to all three numbers.
+
+For the transfer, set the timeout to 30 seconds per person, and try each person once.
+
+If the transfer fails, say something like: "I apologize, I wasn't able to connect you directly with our on-call technician. I've documented this as an emergency and our team has been notified. Someone will call you back within 15 minutes. Can I get your name, number, and the address of the emergency?"
+
+For non-emergency calls during business hours, just transfer them to our main office line at 817-555-0100.
+
+For non-emergency calls after hours, collect the caller's name, phone number, and what they need, then let them know we'll follow up the next business day.
+
+One important thing about ServiceTrade — never create sprinkler jobs automatically in ServiceTrade. Only alarm and extinguisher jobs can be auto-created. Sprinkler jobs need to be manually reviewed by our team first because of the complexity involved.
+
+Also, our service area covers all of DFW metro — Dallas, Fort Worth, Arlington, Irving, Plano, Frisco, basically everything in the Metroplex.
+
+I think that covers everything. Let me know if you have any questions.

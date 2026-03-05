@@ -1,0 +1,50 @@
+Okay, let's get Coastal Sprinkler and Fire set up for Clara. I'm Lisa, the owner.
+
+Business hours: Monday through Friday, 8:00 AM to 4:30 PM Eastern Time. We close at 4:30 because our techs are usually back at the shop by then to off-load equipment.
+
+Address: 3100 Shore Drive, Suite 12, Virginia Beach, Virginia 23451.
+
+Our services:
+- Fire sprinkler system design and engineering
+- Fire sprinkler installation (new construction and retrofit)
+- Fire sprinkler inspection and testing (quarterly, annual, 5-year)
+- Fire sprinkler repair and modification
+- Fire pump testing and maintenance
+- Standpipe system inspection and testing
+- Backflow preventer testing and certification
+- Limited fire alarm work (subcontracted)
+- 24/7 emergency sprinkler repair
+
+Emergencies — here's the deal. For us, an emergency is:
+- Sprinkler head broken, damaged, or activated (water flowing)
+- Sprinkler pipe leak or burst pipe
+- Fire pump failure or alarm
+- Standpipe system issue in an occupied building
+- Any fire protection system impairment in an occupied building
+- Backflow preventer failure causing flooding
+- Fire department connection (FDC) damage
+
+After hours emergency routing:
+1. Primary on-call: Jake Morrison at 757-555-0192. Ring for 45 seconds.
+2. Backup on-call: Chris Taylor at 757-555-0163. Ring for 45 seconds.
+3. If neither answers, call me (Lisa) at 757-555-0148. Ring for 30 seconds.
+4. If nobody answers, take the message and tell the caller we guarantee a callback within 15 minutes. Then text all three numbers with the details.
+
+Really important — when an emergency call comes in, the very first thing Clara should ask after confirming it's an emergency is the ADDRESS. We need to know where we're going before anything else. Then name and number.
+
+Transfer timeout: 45 seconds for Jake and Chris, 30 seconds for me.
+Max retries: 1 per person.
+
+Transfer failure message: "I understand this is an urgent situation with your sprinkler system. I've logged this emergency and alerted our on-call team. Someone will call you back within 15 minutes. In the meantime, if water is actively flowing, please locate the main water shut-off valve if it's safe to do so. Can I confirm the address and your callback number?"
+
+For non-emergency after hours: standard name, number, brief description. Confirm next business day follow-up.
+
+During business hours, transfer to our main line at 757-555-0100. Our office manager Heather answers the phones.
+
+Integration: We use ServiceTrade extensively. Clara can create inspection and service jobs in ServiceTrade but NEVER create emergency sprinkler repair jobs automatically. Those need to go through dispatch manually because we need to check tech availability and equipment needs before dispatching. Extinguisher and alarm work is fine to auto-create.
+
+Service area: Hampton Roads, Virginia — Virginia Beach, Norfolk, Newport News, Hampton, Chesapeake, Suffolk, and Williamsburg.
+
+Oh, also — if a property manager calls about a sprinkler issue in multiple buildings, treat each building as a separate incident. Don't lump them together.
+
+I think that's comprehensive enough. Do you need anything else?

@@ -1,0 +1,299 @@
+{
+  "summary": "v1 -> v2 update: 17 total changes. Business Info: 1 change(s); Hours And Schedule: 2 change(s); Emergency Config: 5 change(s); Transfer Config: 2 change(s); Integration: 1 change(s); Other: 6 change(s)",
+  "timestamp": "2026-03-04T10:26:23.623986Z",
+  "account_id": "acct_apex_fire_protection_10ea9a3c",
+  "company_name": "Apex Fire Protection",
+  "from_version": "v1",
+  "to_version": "v2",
+  "total_changes": 17,
+  "changes_by_category": {
+    "business_info": [
+      {
+        "field": "office_address",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "4521 Industrial Boulevard, Suite 200, Arlington, Texas 76017"
+      }
+    ],
+    "hours_and_schedule": [
+      {
+        "field": "business_hours.end",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "5:00 PM"
+      },
+      {
+        "field": "business_hours.start",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "7:30 AM"
+      }
+    ],
+    "services": [],
+    "emergency_config": [
+      {
+        "field": "emergency_definition",
+        "action": "modified",
+        "old_value": [
+          "Active fire situation",
+          "Sprinkler system leak",
+          "sprinkler leak"
+        ],
+        "new_value": [
+          "Active fire situation",
+          "Flooding",
+          "Sprinkler system leak",
+          "flooding",
+          "sprinkler leak"
+        ]
+      },
+      {
+        "field": "emergency_routing_rules.fallback",
+        "action": "modified",
+        "old_value": "Leave voicemail and assure callback",
+        "new_value": "Route to phone tree"
+      },
+      {
+        "field": "emergency_routing_rules.who_to_call",
+        "action": "modified",
+        "old_value": [
+          {
+            "name": "On-call technician"
+          },
+          {
+            "name": "office manager"
+          }
+        ],
+        "new_value": [
+          {
+            "name": "On-call technician"
+          },
+          {
+            "name": "main office"
+          }
+        ]
+      },
+      {
+        "field": "non_emergency_routing_rules.after_hours",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Collect caller details and confirm follow-up during business hours"
+      },
+      {
+        "field": "non_emergency_routing_rules.during_hours",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Transfer to office/front desk"
+      }
+    ],
+    "routing_rules": [],
+    "transfer_config": [
+      {
+        "field": "call_transfer_rules.failure_message",
+        "action": "modified",
+        "old_value": "I wasn't able to connect you directly. Let me take your information and someone will call you back shortly.",
+        "new_value": "I apologize, I'm unable to transfer you right now. Let me take your information and make sure someone gets back to you promptly."
+      },
+      {
+        "field": "call_transfer_rules.timeout_seconds",
+        "action": "modified",
+        "old_value": null,
+        "new_value": 30
+      }
+    ],
+    "integration": [
+      {
+        "field": "integration_constraints",
+        "action": "modified",
+        "old_value": [
+          "Never create sprinkler jobs in ServiceTrade"
+        ],
+        "new_value": [
+          "Never create certain job types in ServiceTrade (confirm specific types)",
+          "Never create sprinkler jobs in ServiceTrade",
+          "ServiceTrade: sprinkler jobs automatically"
+        ]
+      }
+    ],
+    "other": [
+      {
+        "field": "after_hours_flow_summary",
+        "action": "modified",
+        "old_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, office manager). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+        "new_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, main office). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call."
+      },
+      {
+        "field": "notes",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Phone numbers mentioned: 817-555-0142, 817-555-0100, 817-555-0198, 817-555-0156"
+      },
+      {
+        "field": "office_hours_flow_summary",
+        "action": "modified",
+        "old_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, office manager). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+        "new_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, main office). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally."
+      },
+      {
+        "field": "questions_or_unknowns",
+        "action": "modified",
+        "old_value": [
+          "Office address not provided"
+        ],
+        "new_value": []
+      },
+      {
+        "field": "source_type",
+        "action": "modified",
+        "old_value": "demo",
+        "new_value": "onboarding"
+      },
+      {
+        "field": "version",
+        "action": "modified",
+        "old_value": "v1",
+        "new_value": "v2"
+      }
+    ]
+  },
+  "resolved_unknowns": [
+    "Office address not provided"
+  ],
+  "new_unknowns": [],
+  "all_changes": [
+    {
+      "field": "after_hours_flow_summary",
+      "action": "modified",
+      "old_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, office manager). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+      "new_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, main office). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call."
+    },
+    {
+      "field": "business_hours.end",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "5:00 PM"
+    },
+    {
+      "field": "business_hours.start",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "7:30 AM"
+    },
+    {
+      "field": "call_transfer_rules.failure_message",
+      "action": "modified",
+      "old_value": "I wasn't able to connect you directly. Let me take your information and someone will call you back shortly.",
+      "new_value": "I apologize, I'm unable to transfer you right now. Let me take your information and make sure someone gets back to you promptly."
+    },
+    {
+      "field": "call_transfer_rules.timeout_seconds",
+      "action": "modified",
+      "old_value": null,
+      "new_value": 30
+    },
+    {
+      "field": "emergency_definition",
+      "action": "modified",
+      "old_value": [
+        "Active fire situation",
+        "Sprinkler system leak",
+        "sprinkler leak"
+      ],
+      "new_value": [
+        "Active fire situation",
+        "Flooding",
+        "Sprinkler system leak",
+        "flooding",
+        "sprinkler leak"
+      ]
+    },
+    {
+      "field": "emergency_routing_rules.fallback",
+      "action": "modified",
+      "old_value": "Leave voicemail and assure callback",
+      "new_value": "Route to phone tree"
+    },
+    {
+      "field": "emergency_routing_rules.who_to_call",
+      "action": "modified",
+      "old_value": [
+        {
+          "name": "On-call technician"
+        },
+        {
+          "name": "office manager"
+        }
+      ],
+      "new_value": [
+        {
+          "name": "On-call technician"
+        },
+        {
+          "name": "main office"
+        }
+      ]
+    },
+    {
+      "field": "integration_constraints",
+      "action": "modified",
+      "old_value": [
+        "Never create sprinkler jobs in ServiceTrade"
+      ],
+      "new_value": [
+        "Never create certain job types in ServiceTrade (confirm specific types)",
+        "Never create sprinkler jobs in ServiceTrade",
+        "ServiceTrade: sprinkler jobs automatically"
+      ]
+    },
+    {
+      "field": "non_emergency_routing_rules.after_hours",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Collect caller details and confirm follow-up during business hours"
+    },
+    {
+      "field": "non_emergency_routing_rules.during_hours",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Transfer to office/front desk"
+    },
+    {
+      "field": "notes",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Phone numbers mentioned: 817-555-0142, 817-555-0100, 817-555-0198, 817-555-0156"
+    },
+    {
+      "field": "office_address",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "4521 Industrial Boulevard, Suite 200, Arlington, Texas 76017"
+    },
+    {
+      "field": "office_hours_flow_summary",
+      "action": "modified",
+      "old_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, office manager). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+      "new_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, main office). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally."
+    },
+    {
+      "field": "questions_or_unknowns",
+      "action": "modified",
+      "old_value": [
+        "Office address not provided"
+      ],
+      "new_value": []
+    },
+    {
+      "field": "source_type",
+      "action": "modified",
+      "old_value": "demo",
+      "new_value": "onboarding"
+    },
+    {
+      "field": "version",
+      "action": "modified",
+      "old_value": "v1",
+      "new_value": "v2"
+    }
+  ]
+}

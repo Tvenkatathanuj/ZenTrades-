@@ -1,0 +1,43 @@
+Hey, this is Robert from Summit Electrical. Let's get the onboarding done.
+
+Office hours are Monday through Friday, 6:30 AM to 4:00 PM Mountain Time. We start early because our commercial clients want us on-site early before their businesses open.
+
+Our office is at 7200 East Colfax Avenue, Building C, Denver, Colorado 80220.
+
+Services:
+- Commercial electrical installations
+- Industrial electrical systems
+- Tenant improvement / build-outs
+- Electrical panel upgrades and replacements
+- Generator installation and maintenance
+- Emergency electrical repairs
+- Electrical safety inspections (Arc flash studies, etc.)
+- Lighting retrofits and LED upgrades
+- EV charging station installation
+
+For emergencies, here's our criteria:
+- Complete power loss in an occupied building
+- Electrical fire, smoke, or burning smell from electrical equipment
+- Sparking or arcing equipment
+- Exposed live wiring in a public or occupied area
+- Generator failure during a power outage
+- Any situation posing immediate safety risk to people
+
+Emergency after hours routing:
+1. First try on-call electrician — currently Steve Chen at 303-555-0167. He gets 60 seconds to answer.
+2. If no answer, try me (Robert) at 303-555-0134. 60 seconds.
+3. If neither answers, take a message and tell them we'll have someone call within 20 minutes.
+
+Important: the 60 seconds is firm. Don't do 30 seconds — electricians might be driving and need extra time to pull over and answer.
+
+Transfer failure message: "I apologize for not being able to connect you immediately. I've logged this as an electrical emergency and our team has been alerted. A licensed electrician will call you back within 20 minutes. What's the best number to reach you at?"
+
+During business hours, route all calls to our front desk at 303-555-0100. Our office administrator Pam handles all scheduling and dispatching during the day.
+
+Non-emergency after hours: take a message, confirm follow-up next business day. Standard stuff.
+
+We don't have any special integration requirements. We use QuickBooks for invoicing and Google Calendar for scheduling — neither needs to connect to Clara.
+
+Oh, and one more thing — if someone calls about a generator issue, always ask if it's currently running on generator power. That helps us prioritize because if the generator fails and they lose backup power, that's a bigger deal than a generator that won't start for a routine test.
+
+That should be everything.

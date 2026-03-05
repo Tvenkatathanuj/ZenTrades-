@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Environment
+.env
+.venv/
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+ollama_data/
+n8n_data/
+
+# Logs (keep pipeline.log for reference)
+*.log.bak
+
+# Large model files
+*.pt
+*.bin
+*.safetensors
+
+# Audio files (don't commit raw recordings)
+data/**/*.m4a
+data/**/*.mp3
+data/**/*.wav
+data/**/*.mp4
+data/**/*.webm
+data/**/*.ogg
+data/**/*.flac

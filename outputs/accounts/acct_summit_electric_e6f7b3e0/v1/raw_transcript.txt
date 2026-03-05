@@ -1,0 +1,13 @@
+Good morning. My name is Robert and I'm the operations manager at Summit Electrical Contractors. We're based in Denver, Colorado and we do commercial and industrial electrical work.
+
+We handle everything from new construction electrical installations to tenant improvement projects, panel upgrades, generator installations and maintenance, and emergency electrical repairs.
+
+The challenge we're facing right now is that we get calls at all hours. When a building loses power or has an electrical emergency, our customers need to reach us immediately. Right now those calls go to my personal cell phone after hours, which means I'm basically on call 24/7 and it's wearing me out.
+
+I need a solution that can answer calls, determine if it's a true electrical emergency, and if so, try to reach our on-call electrician. If they can't reach the on-call person, I want them to take a detailed message so I can prioritize it first thing in the morning.
+
+What I consider emergencies are things like power outages in occupied buildings, electrical fires or burning smells, sparking equipment, exposed wiring in public areas, and generator failures during power outages.
+
+During business hours, I just need the calls routed to our front desk. Our office girl handles scheduling and she knows who to dispatch for what.
+
+Do you think Clara could handle that kind of thing?

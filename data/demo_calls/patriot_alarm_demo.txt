@@ -1,0 +1,15 @@
+Hello, this is Jennifer calling from Patriot Alarm and Security. We're a commercial fire alarm and security company servicing the entire Southeast region, mainly Florida, Georgia, and the Carolinas.
+
+We install and maintain fire alarm systems, security alarm systems, access control, and video surveillance. We also do fire alarm monitoring through a central station.
+
+The main issue we're having is that when customers call in, especially after hours, they get confused about whether they should call us or the monitoring station. We need a way to triage those calls — like if their alarm is going off right now, that's a monitoring issue and they should be talking to the central station. But if they have a trouble signal, or they need to schedule an inspection, or they need a system repair, that comes to us.
+
+During office hours we have a receptionist but she's getting overwhelmed. She also handles walk-ins and paperwork. So even during business hours there are times when calls go unanswered.
+
+We'd love for Clara to handle that initial call, figure out what category the call falls into, and route it appropriately.
+
+Our office hours are 8 AM to 5 PM Eastern, Monday through Friday. We're closed on weekends but like I said, emergency calls still come in.
+
+I'd want to see how Clara handles a situation where a customer calls at 10 PM saying their fire alarm panel is showing a trouble signal. That's not necessarily an active fire — it might just need a technician, but the customer is worried and wants to talk to someone.
+
+Can you walk me through how that would work?

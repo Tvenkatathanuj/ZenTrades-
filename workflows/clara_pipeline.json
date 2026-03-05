@@ -1,0 +1,212 @@
+{
+  "name": "Clara Answers Pipeline",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "start-node",
+      "name": "Start",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [200, 300]
+    },
+    {
+      "parameters": {
+        "path": "clara-ingest",
+        "httpMethod": "POST",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-trigger",
+      "name": "Webhook - Ingest File",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 500],
+      "webhookId": "clara-ingest-webhook"
+    },
+    {
+      "parameters": {
+        "functionCode": "// Determine call type and prepare for processing\nconst inputData = items[0].json;\n\n// Accept data from webhook or manual trigger\nconst transcript = inputData.transcript || '';\nconst callType = inputData.call_type || 'demo';  // 'demo' or 'onboarding'\nconst fileName = inputData.file_name || 'unknown';\nconst accountId = inputData.account_id || '';\n\n// Auto-detect call type if not specified\nlet detectedType = callType;\nif (callType === 'auto') {\n  const lower = transcript.toLowerCase();\n  const onboardingSignals = ['onboarding', 'business hours are', 'our hours are', 'emergency means', 'after hours', 'servicetrade'];\n  const demoSignals = ['demo', 'show you', 'how clara works', 'interested in', 'pain point'];\n  \n  const obScore = onboardingSignals.filter(s => lower.includes(s)).length;\n  const demoScore = demoSignals.filter(s => lower.includes(s)).length;\n  detectedType = obScore > demoScore ? 'onboarding' : 'demo';\n}\n\nreturn [{\n  json: {\n    transcript: transcript,\n    call_type: detectedType,\n    file_name: fileName,\n    account_id: accountId,\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "normalize-input",
+      "name": "Normalize Input",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [500, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.call_type}}",
+              "value2": "demo",
+              "operation": "equals"
+            }
+          ]
+        }
+      },
+      "id": "route-by-type",
+      "name": "Route by Call Type",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [750, 400]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Pipeline A: Extract account memo from demo call transcript\nconst transcript = $json.transcript;\nconst fileName = $json.file_name;\n\n// Rule-based extraction (zero-cost, no LLM needed)\nfunction extractCompanyName(text) {\n  const patterns = [\n    /(?:company|business|we are|this is|i'm with|we're)\\s+(?:called\\s+)?([A-Z][A-Za-z\\s&']+(?:LLC|Inc|Corp|Co|Services|Solutions|Electric|Plumbing|HVAC|Fire|Protection|Mechanical|Sprinkler)?)/gi,\n    /([A-Z][A-Za-z]+(?:\\s+[A-Z][A-Za-z]+){0,3})\\s+(?:fire protection|electric|plumbing|hvac|mechanical|sprinkler|services)/gi\n  ];\n  for (const pattern of patterns) {\n    const match = pattern.exec(text);\n    if (match && match[1] && match[1].length > 3) return match[1].trim();\n  }\n  return fileName.replace(/[_-]/g, ' ').replace(/\\.[^.]+$/, '');\n}\n\nfunction extractBusinessHours(text) {\n  const hourPattern = /(\\d{1,2}(?::\\d{2})?\\s*(?:am|pm))\\s*(?:to|until|-)\\s*(\\d{1,2}(?::\\d{2})?\\s*(?:am|pm))/gi;\n  const match = hourPattern.exec(text);\n  const dayPattern = /(Monday\\s*(?:through|to|-)\\s*(?:Friday|Saturday|Sunday))/gi;\n  const dayMatch = dayPattern.exec(text);\n  const tzPattern = /(Eastern|Central|Mountain|Pacific|EST|CST|MST|PST)/gi;\n  const tzMatch = tzPattern.exec(text);\n  return {\n    days: dayMatch ? dayMatch[1] : '',\n    start: match ? match[1] : '',\n    end: match ? match[2] : '',\n    timezone: tzMatch ? tzMatch[1] : ''\n  };\n}\n\nfunction extractServices(text) {\n  const services = [];\n  const keywords = {\n    'fire protection': 'Fire Protection',\n    'fire alarm': 'Fire Alarm Systems',\n    'fire sprinkler': 'Fire Sprinkler Systems',\n    'fire extinguisher': 'Fire Extinguisher Service',\n    'inspection': 'Inspection Services',\n    'maintenance': 'Maintenance',\n    'emergency service': 'Emergency Service',\n    'monitoring': 'Alarm Monitoring',\n    'electrical': 'Electrical Services',\n    'hvac': 'HVAC Services',\n    'plumbing': 'Plumbing Services',\n    'pressure washing': 'Pressure Washing'\n  };\n  const lower = text.toLowerCase();\n  for (const [kw, svc] of Object.entries(keywords)) {\n    if (lower.includes(kw)) services.push(svc);\n  }\n  return services;\n}\n\nfunction generateAccountId(name) {\n  const normalized = name.toLowerCase().replace(/\\s+/g, '_').replace(/[^a-z0-9_]/g, '').substring(0, 20);\n  let hash = 0;\n  for (let i = 0; i < name.length; i++) {\n    hash = ((hash << 5) - hash) + name.charCodeAt(i);\n    hash = hash & hash;\n  }\n  return `acct_${normalized}_${Math.abs(hash).toString(16).substring(0, 8)}`;\n}\n\nconst companyName = extractCompanyName(transcript);\nconst accountId = $json.account_id || generateAccountId(companyName);\nconst hours = extractBusinessHours(transcript);\nconst services = extractServices(transcript);\n\nconst unknowns = [];\nif (!hours.start) unknowns.push('Business hours not explicitly stated in demo call');\nif (!hours.timezone) unknowns.push('Timezone not specified');\n\nconst memo = {\n  account_id: accountId,\n  company_name: companyName,\n  business_type: 'service business',\n  business_hours: hours,\n  office_address: '',\n  services_supported: services,\n  emergency_definition: [],\n  emergency_routing_rules: { who_to_call: [], call_order: [], fallback: '' },\n  non_emergency_routing_rules: { during_hours: 'Transfer to office', after_hours: 'Collect information and confirm follow-up' },\n  call_transfer_rules: { timeout_seconds: 30, max_retries: 2, failure_message: 'I apologize, I\\'m unable to transfer you right now. Let me take your information.' },\n  integration_constraints: [],\n  after_hours_flow_summary: 'Standard after-hours flow with emergency detection',\n  office_hours_flow_summary: 'Standard business hours flow with transfer',\n  questions_or_unknowns: unknowns,\n  notes: '',\n  source_type: 'demo',\n  version: 'v1',\n  extraction_method: 'n8n_rule_based'\n};\n\nreturn [{ json: { memo: memo, account_id: accountId, company_name: companyName, call_type: 'demo' } }];"
+      },
+      "id": "extract-demo",
+      "name": "Extract Demo Memo",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Pipeline B: Extract onboarding data\nconst transcript = $json.transcript;\nconst fileName = $json.file_name;\n\n// Same extraction logic as demo but with onboarding context\nfunction extractCompanyName(text) {\n  const patterns = [\n    /(?:company|business|we are|this is|i'm with|we're)\\s+(?:called\\s+)?([A-Z][A-Za-z\\s&']+(?:LLC|Inc|Corp|Co|Services|Solutions|Electric|Plumbing|HVAC|Fire|Protection|Mechanical|Sprinkler)?)/gi\n  ];\n  for (const pattern of patterns) {\n    const match = pattern.exec(text);\n    if (match && match[1] && match[1].length > 3) return match[1].trim();\n  }\n  return fileName.replace(/[_-]/g, ' ').replace(/\\.[^.]+$/, '');\n}\n\nfunction generateAccountId(name) {\n  const normalized = name.toLowerCase().replace(/\\s+/g, '_').replace(/[^a-z0-9_]/g, '').substring(0, 20);\n  let hash = 0;\n  for (let i = 0; i < name.length; i++) {\n    hash = ((hash << 5) - hash) + name.charCodeAt(i);\n    hash = hash & hash;\n  }\n  return `acct_${normalized}_${Math.abs(hash).toString(16).substring(0, 8)}`;\n}\n\nconst companyName = extractCompanyName(transcript);\nconst accountId = $json.account_id || generateAccountId(companyName);\n\n// Onboarding extracts more detail\nconst memo = {\n  account_id: accountId,\n  company_name: companyName,\n  source_type: 'onboarding',\n  version: 'v2',\n  extraction_method: 'n8n_rule_based',\n  transcript_excerpt: transcript.substring(0, 500)\n};\n\nreturn [{ json: { onboarding_memo: memo, account_id: accountId, company_name: companyName, call_type: 'onboarding', transcript: transcript } }];"
+      },
+      "id": "extract-onboarding",
+      "name": "Extract Onboarding Data",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1050, 500]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Generate Retell Agent Spec from Account Memo\nconst memo = $json.memo;\nconst company = memo.company_name || 'Unknown Company';\nconst hours = memo.business_hours || {};\nconst hoursStr = (hours.start && hours.end) ? `${hours.days || 'Monday-Friday'}, ${hours.start} to ${hours.end} ${hours.timezone || ''}` : 'Not yet configured';\n\nconst systemPrompt = `You are Clara, a professional AI receptionist for ${company}.\nYou handle inbound calls with warmth, efficiency, and professionalism.\n\nCompany: ${company}\nBusiness Hours: ${hoursStr}\nServices: ${(memo.services_supported || []).join(', ') || 'Various services'}\n\n=== BUSINESS HOURS FLOW ===\n1. Greet: \"Thank you for calling ${company}. This is Clara, how can I help you today?\"\n2. Ask purpose of call\n3. Collect caller name and callback number\n4. Transfer to appropriate party\n5. If transfer fails: take message, confirm follow-up\n6. \"Is there anything else I can help you with?\"\n7. Close call professionally\n\n=== AFTER-HOURS FLOW ===\n1. Greet: \"Thank you for calling ${company}. You've reached us after hours.\"\n2. Ask purpose of call\n3. Determine if emergency\n4. If EMERGENCY: collect name, number, address immediately, attempt transfer\n5. If transfer fails: assure callback, log as urgent\n6. If NOT emergency: collect details, confirm follow-up next business day\n7. \"Is there anything else?\"\n8. Close call\n\n=== RULES ===\n- NEVER mention internal tools or functions to the caller\n- NEVER fabricate information\n- Keep conversations efficient\n- Always provide next steps`;\n\nconst spec = {\n  agent_name: `Clara - ${company}`,\n  agent_id: `agent_${memo.account_id}_${memo.version}`,\n  version: memo.version || 'v1',\n  created_at: new Date().toISOString(),\n  account_id: memo.account_id,\n  voice_config: {\n    voice_style: 'professional_friendly',\n    voice_id: 'rachel',\n    language: 'en-US'\n  },\n  system_prompt: systemPrompt,\n  key_variables: {\n    company_name: company,\n    timezone: hours.timezone || '',\n    business_hours: hours,\n    emergency_contacts: (memo.emergency_routing_rules || {}).who_to_call || []\n  },\n  call_transfer_protocol: memo.call_transfer_rules || { timeout_seconds: 30, max_retries: 2 },\n  fallback_protocol: {\n    transfer_failure: 'Collect caller info, log message, assure follow-up',\n    system_error: 'Apologize, provide main office number'\n  },\n  metadata: {\n    source_call_type: memo.source_type,\n    extraction_method: memo.extraction_method,\n    confidence_level: memo.version === 'v1' ? 'preliminary' : 'confirmed'\n  }\n};\n\nreturn [{ json: { memo: memo, spec: spec, account_id: memo.account_id, version: memo.version } }];"
+      },
+      "id": "generate-agent-spec",
+      "name": "Generate Agent Spec",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1350, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Store outputs to local filesystem\nconst memo = $json.memo;\nconst spec = $json.spec;\nconst accountId = $json.account_id;\nconst version = $json.version || 'v1';\n\n// In n8n, we store the outputs as workflow data\n// In production, this would write to filesystem or database\nconst output = {\n  account_id: accountId,\n  version: version,\n  company_name: memo.company_name,\n  stored_at: new Date().toISOString(),\n  artifacts: {\n    account_memo: memo,\n    agent_spec: spec\n  },\n  storage_path: `outputs/accounts/${accountId}/${version}/`,\n  status: 'stored'\n};\n\nreturn [{ json: output }];"
+      },
+      "id": "store-outputs",
+      "name": "Store Outputs",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1650, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Create task tracker item\nconst accountId = $json.account_id;\nconst version = $json.version;\nconst companyName = $json.company_name;\nconst unknownsCount = ($json.artifacts.account_memo.questions_or_unknowns || []).length;\n\nconst task = {\n  task_id: `setup_${accountId}`,\n  title: `[${version}] Setup Agent - ${companyName}`,\n  status: version === 'v1' ? 'in_progress' : 'review',\n  description: `Agent ${version} created for ${companyName}. Open questions: ${unknownsCount}`,\n  created_at: new Date().toISOString(),\n  metadata: {\n    account_id: accountId,\n    version: version,\n    unknowns_count: unknownsCount\n  }\n};\n\nreturn [{ json: { ...($json), task: task } }];"
+      },
+      "id": "create-task",
+      "name": "Create Task Item",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1950, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Merge v1 + onboarding → v2 and generate changelog\nconst onboardingData = $json;\nconst accountId = onboardingData.account_id;\n\n// In real n8n, you'd read v1 from storage.\n// Here we demonstrate the merge logic.\nconst changelog = {\n  account_id: accountId,\n  company_name: onboardingData.company_name,\n  from_version: 'v1',\n  to_version: 'v2',\n  timestamp: new Date().toISOString(),\n  changes: [\n    { field: 'version', action: 'modified', old_value: 'v1', new_value: 'v2' },\n    { field: 'source_type', action: 'modified', old_value: 'demo', new_value: 'onboarding' }\n  ],\n  summary: 'Onboarding data merged into v1 to produce v2'\n};\n\nreturn [{ json: { account_id: accountId, company_name: onboardingData.company_name, changelog: changelog, call_type: 'onboarding', version: 'v2' } }];"
+      },
+      "id": "merge-update",
+      "name": "Merge & Update to v2",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [1350, 500]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify($json) }}"
+      },
+      "id": "response-node",
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2250, 400]
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [
+        [
+          { "node": "Normalize Input", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Webhook - Ingest File": {
+      "main": [
+        [
+          { "node": "Normalize Input", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Normalize Input": {
+      "main": [
+        [
+          { "node": "Route by Call Type", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Route by Call Type": {
+      "main": [
+        [
+          { "node": "Extract Demo Memo", "type": "main", "index": 0 }
+        ],
+        [
+          { "node": "Extract Onboarding Data", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Extract Demo Memo": {
+      "main": [
+        [
+          { "node": "Generate Agent Spec", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Extract Onboarding Data": {
+      "main": [
+        [
+          { "node": "Merge & Update to v2", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Generate Agent Spec": {
+      "main": [
+        [
+          { "node": "Store Outputs", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Store Outputs": {
+      "main": [
+        [
+          { "node": "Create Task Item", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Create Task Item": {
+      "main": [
+        [
+          { "node": "Respond", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Merge & Update to v2": {
+      "main": [
+        [
+          { "node": "Respond", "type": "main", "index": 0 }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [
+    { "name": "clara-answers" },
+    { "name": "automation" }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2026-03-04T00:00:00.000Z",
+  "versionId": "1"
+}

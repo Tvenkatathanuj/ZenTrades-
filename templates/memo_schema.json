@@ -1,0 +1,112 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Clara Answers Account Memo",
+  "description": "Structured account information extracted from demo/onboarding calls",
+  "type": "object",
+  "required": ["account_id", "company_name", "version"],
+  "properties": {
+    "account_id": {
+      "type": "string",
+      "description": "Unique account identifier (deterministic from company name)"
+    },
+    "company_name": {
+      "type": "string",
+      "description": "Full company name"
+    },
+    "business_type": {
+      "type": "string",
+      "description": "Type of business (fire protection, electrical, etc.)"
+    },
+    "business_hours": {
+      "type": "object",
+      "properties": {
+        "days": { "type": "string", "description": "Operating days (e.g., Monday through Friday)" },
+        "start": { "type": "string", "description": "Opening time (e.g., 8:00 AM)" },
+        "end": { "type": "string", "description": "Closing time (e.g., 5:00 PM)" },
+        "timezone": { "type": "string", "description": "Timezone (e.g., Eastern, Central)" }
+      }
+    },
+    "office_address": {
+      "type": "string",
+      "description": "Physical office address, if provided"
+    },
+    "services_supported": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of services the company provides"
+    },
+    "emergency_definition": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of conditions that constitute an emergency"
+    },
+    "emergency_routing_rules": {
+      "type": "object",
+      "properties": {
+        "who_to_call": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "phone": { "type": "string" },
+              "role": { "type": "string" }
+            }
+          }
+        },
+        "call_order": { "type": "array", "items": { "type": "string" } },
+        "fallback": { "type": "string" }
+      }
+    },
+    "non_emergency_routing_rules": {
+      "type": "object",
+      "properties": {
+        "during_hours": { "type": "string" },
+        "after_hours": { "type": "string" }
+      }
+    },
+    "call_transfer_rules": {
+      "type": "object",
+      "properties": {
+        "timeout_seconds": { "type": ["integer", "null"] },
+        "max_retries": { "type": ["integer", "null"] },
+        "failure_message": { "type": "string" }
+      }
+    },
+    "integration_constraints": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Rules about third-party integrations (e.g., ServiceTrade)"
+    },
+    "after_hours_flow_summary": {
+      "type": "string",
+      "description": "Summary of after-hours call handling flow"
+    },
+    "office_hours_flow_summary": {
+      "type": "string",
+      "description": "Summary of business hours call handling flow"
+    },
+    "questions_or_unknowns": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Items that could not be determined from the transcript"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["demo", "onboarding"],
+      "description": "Whether data came from demo or onboarding call"
+    },
+    "version": {
+      "type": "string",
+      "description": "Version string (v1, v2, etc.)"
+    },
+    "extraction_method": {
+      "type": "string",
+      "description": "Method used for extraction (rule_based, llm_ollama, etc.)"
+    }
+  }
+}

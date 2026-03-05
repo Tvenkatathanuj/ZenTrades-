@@ -1,0 +1,102 @@
+# Changelog: Apex Fire Protection
+## v1 -> v2
+
+**Account ID:** acct_apex_fire_protection_10ea9a3c  
+**Date:** 2026-03-04T10:26:23.623986Z  
+**Total Changes:** 17
+
+---
+
+## Summary
+v1 -> v2 update: 17 total changes. Business Info: 1 change(s); Hours And Schedule: 2 change(s); Emergency Config: 5 change(s); Transfer Config: 2 change(s); Integration: 1 change(s); Other: 6 change(s)
+
+---
+
+## Changes by Category
+
+### Business Info
+
+- **[MODIFIED]** `office_address`
+  - Before: 
+  - After: 4521 Industrial Boulevard, Suite 200, Arlington, Texas 76017
+
+### Hours And Schedule
+
+- **[MODIFIED]** `business_hours.end`
+  - Before: 
+  - After: 5:00 PM
+
+- **[MODIFIED]** `business_hours.start`
+  - Before: 
+  - After: 7:30 AM
+
+### Emergency Config
+
+- **[MODIFIED]** `emergency_definition`
+  - Before: ["Active fire situation", "Sprinkler system leak", "sprinkler leak"]
+  - After: ["Active fire situation", "Flooding", "Sprinkler system leak", "flooding", "sprinkler leak"]
+
+- **[MODIFIED]** `emergency_routing_rules.fallback`
+  - Before: Leave voicemail and assure callback
+  - After: Route to phone tree
+
+- **[MODIFIED]** `emergency_routing_rules.who_to_call`
+  - Before: [{"name": "On-call technician"}, {"name": "office manager"}]
+  - After: [{"name": "On-call technician"}, {"name": "main office"}]
+
+- **[MODIFIED]** `non_emergency_routing_rules.after_hours`
+  - Before: 
+  - After: Collect caller details and confirm follow-up during business hours
+
+- **[MODIFIED]** `non_emergency_routing_rules.during_hours`
+  - Before: 
+  - After: Transfer to office/front desk
+
+### Transfer Config
+
+- **[MODIFIED]** `call_transfer_rules.failure_message`
+  - Before: I wasn't able to connect you directly. Let me take your information and someone will call you back shortly.
+  - After: I apologize, I'm unable to transfer you right now. Let me take your information and make sure someone gets back to you promptly.
+
+- **[MODIFIED]** `call_transfer_rules.timeout_seconds`
+  - Before: null
+  - After: 30
+
+### Integration
+
+- **[MODIFIED]** `integration_constraints`
+  - Before: ["Never create sprinkler jobs in ServiceTrade"]
+  - After: ["Never create certain job types in ServiceTrade (confirm specific types)", "Never create sprinkler jobs in ServiceTrade", "ServiceTrade: sprinkler jobs automatically"]
+
+### Other
+
+- **[MODIFIED]** `after_hours_flow_summary`
+  - Before: Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, office manager). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.
+  - After: Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, main office). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.
+
+- **[MODIFIED]** `notes`
+  - Before: 
+  - After: Phone numbers mentioned: 817-555-0142, 817-555-0100, 817-555-0198, 817-555-0156
+
+- **[MODIFIED]** `office_hours_flow_summary`
+  - Before: Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, office manager). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.
+  - After: Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, main office). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.
+
+- **[MODIFIED]** `questions_or_unknowns`
+  - Before: ["Office address not provided"]
+  - After: []
+
+- **[MODIFIED]** `source_type`
+  - Before: demo
+  - After: onboarding
+
+- **[MODIFIED]** `version`
+  - Before: v1
+  - After: v2
+
+## Resolved Unknowns
+
+- [OK] Office address not provided
+
+---
+*Generated by Clara Answers Pipeline*

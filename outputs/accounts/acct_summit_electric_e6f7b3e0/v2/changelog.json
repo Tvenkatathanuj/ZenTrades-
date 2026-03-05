@@ -1,0 +1,266 @@
+{
+  "summary": "v1 -> v2 update: 15 total changes. Business Info: 1 change(s); Hours And Schedule: 4 change(s); Services: 1 change(s); Emergency Config: 2 change(s); Transfer Config: 1 change(s); Other: 6 change(s)",
+  "timestamp": "2026-03-04T10:26:23.937938Z",
+  "account_id": "acct_summit_electric_e6f7b3e0",
+  "company_name": "Summit Electric",
+  "from_version": "v1",
+  "to_version": "v2",
+  "total_changes": 15,
+  "changes_by_category": {
+    "business_info": [
+      {
+        "field": "office_address",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "7200 East Colfax Avenue, Building C, Denver, Colorado 80220"
+      }
+    ],
+    "hours_and_schedule": [
+      {
+        "field": "business_hours.days",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Monday through Friday"
+      },
+      {
+        "field": "business_hours.end",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "4:00 PM"
+      },
+      {
+        "field": "business_hours.start",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "6:30 AM"
+      },
+      {
+        "field": "business_hours.timezone",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Mountain"
+      }
+    ],
+    "services": [
+      {
+        "field": "services_supported",
+        "action": "modified",
+        "old_value": [
+          "24/7 Emergency Response",
+          "Electrical Services",
+          "Installation",
+          "Maintenance",
+          "Repair Services"
+        ],
+        "new_value": [
+          "24/7 Emergency Response",
+          "Electrical Services",
+          "Inspection Services",
+          "Installation",
+          "Maintenance",
+          "Repair Services"
+        ]
+      }
+    ],
+    "emergency_config": [
+      {
+        "field": "emergency_routing_rules.who_to_call",
+        "action": "modified",
+        "old_value": [
+          {
+            "name": "On-call technician"
+          },
+          {
+            "name": "front desk"
+          }
+        ],
+        "new_value": [
+          {
+            "name": "front desk"
+          }
+        ]
+      },
+      {
+        "field": "non_emergency_routing_rules.after_hours",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Collect caller details and confirm follow-up during business hours"
+      }
+    ],
+    "routing_rules": [],
+    "transfer_config": [
+      {
+        "field": "call_transfer_rules.timeout_seconds",
+        "action": "modified",
+        "old_value": null,
+        "new_value": 30
+      }
+    ],
+    "integration": [],
+    "other": [
+      {
+        "field": "after_hours_flow_summary",
+        "action": "modified",
+        "old_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, front desk). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+        "new_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (front desk). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call."
+      },
+      {
+        "field": "notes",
+        "action": "modified",
+        "old_value": "",
+        "new_value": "Phone numbers mentioned: 303-555-0167, 303-555-0134, 303-555-0100"
+      },
+      {
+        "field": "office_hours_flow_summary",
+        "action": "modified",
+        "old_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, front desk). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+        "new_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (front desk). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally."
+      },
+      {
+        "field": "questions_or_unknowns",
+        "action": "modified",
+        "old_value": [
+          "Timezone not specified",
+          "Office address not provided"
+        ],
+        "new_value": []
+      },
+      {
+        "field": "source_type",
+        "action": "modified",
+        "old_value": "demo",
+        "new_value": "onboarding"
+      },
+      {
+        "field": "version",
+        "action": "modified",
+        "old_value": "v1",
+        "new_value": "v2"
+      }
+    ]
+  },
+  "resolved_unknowns": [
+    "Office address not provided",
+    "Timezone not specified"
+  ],
+  "new_unknowns": [],
+  "all_changes": [
+    {
+      "field": "after_hours_flow_summary",
+      "action": "modified",
+      "old_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (On-call technician, front desk). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call.",
+      "new_value": "Caller reaches Clara after business hours. Clara greets the caller and acknowledges after-hours status. Clara asks for the purpose of the call. Clara determines if this is an emergency. If EMERGENCY: Clara immediately collects name, callback number, and location/address. Clara attempts to transfer to on-call personnel (front desk). If transfer fails, Clara assures the caller that someone will call back shortly. If NOT EMERGENCY: Clara collects details and confirms follow-up during next business day. Clara asks if there's anything else needed. Clara closes the call."
+    },
+    {
+      "field": "business_hours.days",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Monday through Friday"
+    },
+    {
+      "field": "business_hours.end",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "4:00 PM"
+    },
+    {
+      "field": "business_hours.start",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "6:30 AM"
+    },
+    {
+      "field": "business_hours.timezone",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Mountain"
+    },
+    {
+      "field": "call_transfer_rules.timeout_seconds",
+      "action": "modified",
+      "old_value": null,
+      "new_value": 30
+    },
+    {
+      "field": "emergency_routing_rules.who_to_call",
+      "action": "modified",
+      "old_value": [
+        {
+          "name": "On-call technician"
+        },
+        {
+          "name": "front desk"
+        }
+      ],
+      "new_value": [
+        {
+          "name": "front desk"
+        }
+      ]
+    },
+    {
+      "field": "non_emergency_routing_rules.after_hours",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Collect caller details and confirm follow-up during business hours"
+    },
+    {
+      "field": "notes",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "Phone numbers mentioned: 303-555-0167, 303-555-0134, 303-555-0100"
+    },
+    {
+      "field": "office_address",
+      "action": "modified",
+      "old_value": "",
+      "new_value": "7200 East Colfax Avenue, Building C, Denver, Colorado 80220"
+    },
+    {
+      "field": "office_hours_flow_summary",
+      "action": "modified",
+      "old_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (On-call technician, front desk). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally.",
+      "new_value": "Caller reaches Clara during business hours. Clara greets the caller professionally. Clara asks for the purpose of the call. Clara collects the caller's name and callback number. Clara attempts to transfer to appropriate party (front desk). If transfer fails, Clara takes a detailed message and confirms follow-up. Clara asks if there's anything else needed. Clara closes the call professionally."
+    },
+    {
+      "field": "questions_or_unknowns",
+      "action": "modified",
+      "old_value": [
+        "Timezone not specified",
+        "Office address not provided"
+      ],
+      "new_value": []
+    },
+    {
+      "field": "services_supported",
+      "action": "modified",
+      "old_value": [
+        "24/7 Emergency Response",
+        "Electrical Services",
+        "Installation",
+        "Maintenance",
+        "Repair Services"
+      ],
+      "new_value": [
+        "24/7 Emergency Response",
+        "Electrical Services",
+        "Inspection Services",
+        "Installation",
+        "Maintenance",
+        "Repair Services"
+      ]
+    },
+    {
+      "field": "source_type",
+      "action": "modified",
+      "old_value": "demo",
+      "new_value": "onboarding"
+    },
+    {
+      "field": "version",
+      "action": "modified",
+      "old_value": "v1",
+      "new_value": "v2"
+    }
+  ]
+}

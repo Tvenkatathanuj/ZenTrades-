@@ -1,0 +1,41 @@
+This is the onboarding call for Patriot Alarm and Security. I'm Jennifer, the general manager.
+
+Let me go through everything systematically.
+
+Office hours: Monday through Friday, 8:00 AM to 5:00 PM Eastern Time. We have a half day on Friday sometimes but let's keep it 8 to 5 to be safe.
+
+Our main office is at 1200 Peachtree Industrial Boulevard, Suite 450, Atlanta, Georgia 30309.
+
+Services we provide:
+- Fire alarm system installation, service, and repair
+- Security alarm systems
+- Access control systems
+- Video surveillance / CCTV
+- Fire alarm monitoring (we partner with a central monitoring station)
+- Fire alarm inspection and testing
+- Low voltage wiring
+
+Now here's the important part about call triage. When someone calls, Clara needs to determine what category their call falls into:
+
+1. ACTIVE ALARM / MONITORING ISSUE: If someone says their alarm is actively going off or they're getting notifications from the monitoring system, Clara should tell them to also contact our monitoring station at 800-555-0999. We can't dispatch from our end for active alarms — the monitoring station handles that per code requirements. Clara should still take their info and create a record.
+
+2. TROUBLE SIGNAL / SYSTEM PROBLEM: If someone has a trouble light, a beeping panel, a system fault, or any non-active-alarm system issue, that's US. During hours, transfer to our service desk at 404-555-0250. After hours, if it's causing business disruption (like they can't arm their system), treat it as semi-urgent and try our on-call tech.
+
+3. SERVICE REQUEST: Inspection scheduling, quotes, new installations — these go to our sales team during hours at 404-555-0260. After hours, just take a message.
+
+4. EMERGENCY AFTER HOURS:
+   - On-call technician: James Patterson at 404-555-0188. Ring for 30 seconds.
+   - Backup: My cell, Jennifer at 404-555-0145. Ring for 30 seconds.
+   - If neither answers, take the message and send notification to both numbers via text.
+
+Transfer timeout: 30 seconds. Maximum 1 retry per person.
+
+Failure message: "I'm sorry I wasn't able to reach our on-call technician directly. I've recorded your issue and sent an alert to our team. You should expect a callback within 20 minutes. In the meantime, if this is an active fire alarm situation, please also contact our monitoring station at 800-555-0999 and your local fire department if needed."
+
+Non-emergency after hours: standard message collection.
+
+Integration notes: We use a CRM system but Clara doesn't need to integrate with it. Just generate good message logs that we can import manually.
+
+One more thing — Clara should never tell a customer to ignore an alarm or that it's probably a false alarm. Even if it sounds like a false alarm, we always treat it seriously. Safety first.
+
+Okay I think that's everything. Let me know if you need anything else from me.

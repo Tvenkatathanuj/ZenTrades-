@@ -1,0 +1,13 @@
+Hey there, I'm Mike from Guardian Mechanical Services. We're a commercial HVAC and refrigeration company up in the Chicago area. We service everything from rooftop units to chillers, boilers, you name it.
+
+The reason I'm here today is because we need help with our phone system. We're a 24/7 operation — well, sort of. Our office is open regular business hours but we have techs on call around the clock for emergencies. The problem is our current setup has calls going to a cell phone after hours and honestly our on-call guy misses calls sometimes. Or the customer gets frustrated because nobody picks up.
+
+What would be really great is if Clara could answer those calls, figure out if it's a real emergency, and then try to connect them with whoever is on call. And if our tech doesn't answer, at least take a message so we can call them back quick.
+
+For us an emergency would be things like no heat in winter — that's a big one for commercial buildings, it can freeze pipes. No AC in summer for data centers or medical facilities. Refrigeration failures for restaurants or grocery stores. Gas leaks obviously.
+
+I think Clara could really help us especially during the holidays. Last Christmas we had three emergency calls come in and two of them went to voicemail because our on-call tech was dealing with the first one.
+
+We use a dispatch system but I don't think it has an API. So mainly we'd need Clara to just take good messages and text or call our on-call person.
+
+What else do you need to know?
